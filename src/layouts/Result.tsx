@@ -68,10 +68,6 @@ function Result({ setScore, pick, setIsPicking }: ResultProps) {
     }
   }, [isPicked, pick, randomPick, setScore, setPlayAnimation]);
 
-  const pickHandler = (p: "rock" | "paper" | "scissors") => {
-    console.log(p);
-  };
-
   const playAgain = () => {
     setAnimation("pop-out");
     setTimeout(() => setIsPicking(true), 300);
@@ -89,7 +85,6 @@ function Result({ setScore, pick, setIsPicking }: ResultProps) {
           {pick && (
             <ChoiceButton
               button={pick}
-              pickHandler={pickHandler}
               isPreview={false}
               playAnimation={playAnimation && result === "YOU WIN"}
             />
@@ -117,7 +112,6 @@ function Result({ setScore, pick, setIsPicking }: ResultProps) {
               <div className="pop-in">
                 <ChoiceButton
                   button={randomPick}
-                  pickHandler={pickHandler}
                   isPreview={false}
                   playAnimation={playAnimation && result === "YOU LOST"}
                 />

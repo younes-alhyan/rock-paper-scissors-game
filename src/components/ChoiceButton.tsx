@@ -5,7 +5,7 @@ import ScissorsIcon from "../assets/icon-scissors.svg";
 
 interface ChoiceButtonProps {
   button: "rock" | "paper" | "scissors";
-  pickHandler: (p: "rock" | "paper" | "scissors") => void | undefined;
+  pickHandler?: (p: "rock" | "paper" | "scissors") => void;
   isPreview: boolean;
   playAnimation?: boolean;
 }
@@ -49,7 +49,7 @@ function ChoiceButton({
         !playAnimation ? "z-10" : ""
       } ${button}`}
       onClick={() => {
-        pickHandler(button);
+        pickHandler?.(button);
       }}
     >
       <div className="choice-button">
