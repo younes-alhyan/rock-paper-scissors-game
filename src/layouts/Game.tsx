@@ -19,7 +19,7 @@ function Game({ setPick, setIsPicking }: GameProps) {
 
   return (
     <div className={`relative flex items-center justify-center ${animation} my-32`}>
-      <img src={TriangleSVG} alt="TriangleSVG" className="w-[70vw] sm:w-auto"/>
+      <img src={TriangleSVG} alt="TriangleSVG" className="w-[60vw] max-w-3xs sm:w-auto"/>
       <ChoiceButton button="paper" pickHandler={pickHandler} isPreview={true} />
       <ChoiceButton
         button="scissors"

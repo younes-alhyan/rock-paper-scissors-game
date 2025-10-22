@@ -16,7 +16,7 @@ function App() {
   }
 
   return (
-    <div className="h-full flex flex-col items-center">
+    <div className="min-h-screen overflow-hidden flex flex-col items-center">
       <Header score={score} />
       {isPicking ? (
         <Game setPick={setPick} setIsPicking={setIsPicking} />
