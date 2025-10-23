@@ -2,15 +2,16 @@ import { useEffect, useState } from "react";
 import PaperIcon from "../assets/icon-paper.svg";
 import RockIcon from "../assets/icon-rock.svg";
 import ScissorsIcon from "../assets/icon-scissors.svg";
+import type { Choice } from "../types";
 
 interface ChoiceButtonProps {
-  button: "rock" | "paper" | "scissors";
-  pickHandler?: (p: "rock" | "paper" | "scissors") => void;
+  button: Choice;
+  pickHandler?: (p: Choice) => void;
   isPreview: boolean;
   playAnimation?: boolean;
 }
 
-const iconsMap = {
+const iconsMap: Record<Choice, string> = {
   paper: PaperIcon,
   rock: RockIcon,
   scissors: ScissorsIcon,

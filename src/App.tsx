@@ -4,11 +4,12 @@ import Game from "./layouts/Game";
 import Result from "./layouts/Result";
 import RulesRow from "./layouts/RulesRow";
 import Rules from "./components/Rules";
+import type { Choice } from "./types";
 
 function App() {
   const [score, setScore] = useState<number>(0);
   const [isPicking, setIsPicking] = useState<boolean>(true);
-  const [pick, setPick] = useState<"rock" | "paper" | "scissors" | undefined>();
+  const [pick, setPick] = useState<Choice | undefined>();
   const [showRules, setShowRules] = useState(false);
 
   function toggleRules() {

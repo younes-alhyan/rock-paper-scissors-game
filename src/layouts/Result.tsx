@@ -1,44 +1,40 @@
 import { useState, useEffect } from "react";
 import ChoiceButton from "../components/ChoiceButton";
+import { choices } from "../types";
+import type { Choice } from "../types";
 
 interface ResultProps {
   setScore: React.Dispatch<React.SetStateAction<number>>;
-  pick: "rock" | "paper" | "scissors" | undefined;
+  pick: Choice | undefined;
   setIsPicking: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const RPSMap = {
-  rock: "scissors",
-  scissors: "paper",
-  paper: "rock",
-} as const;
+const RPSMap: Record<Choice, Choice[]> = {
+  rock: ["scissors"],
+  paper: ["rock"],
+  scissors: ["paper"],
+};
 
 function Result({ setScore, pick, setIsPicking }: ResultProps) {
   const [animation, setAnimation] = useState("pop-in");
   const [isPicked, setIsPicked] = useState(false);
-  const [randomPick, setRandomPick] = useState<"rock" | "paper" | "scissors">();
+  const [randomPick, setRandomPick] = useState<Choice>();
   const [result, setResult] = useState<string>();
   const [playAnimation, setPlayAnimation] = useState(false);
 
   useEffect(() => {
     if (!pick) return;
 
-    const picks: Array<"rock" | "paper" | "scissors"> = [
-      "rock",
-      "paper",
-      "scissors",
-    ];
     const total = 25;
     const interval = 50;
     const timeouts: number[] = [];
 
-    let random: "rock" | "paper" | "scissors" =
-      picks[Math.floor(Math.random() * picks.length)];
+    let random: Choice = choices[Math.floor(Math.random() * choices.length)];
 
     for (let i = 0; i < total; i++) {
       timeouts.push(
         window.setTimeout(() => {
-          random = picks[Math.floor(Math.random() * picks.length)];
+          random = choices[Math.floor(Math.random() * choices.length)];
           setRandomPick(random);
         }, i * interval)
       );
@@ -58,7 +54,7 @@ function Result({ setScore, pick, setIsPicking }: ResultProps) {
     if (!isPicked || !pick || !randomPick) return;
 
     if (pick === randomPick) setResult("DRAW");
-    else if (RPSMap[pick] === randomPick) {
+    else if (RPSMap[pick].includes(randomPick)) {
       setScore((score) => score + 1);
       setResult("YOU WIN");
       setPlayAnimation(true);
