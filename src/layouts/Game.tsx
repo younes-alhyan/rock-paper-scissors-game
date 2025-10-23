@@ -1,5 +1,5 @@
 import ChoiceButton from "../components/ChoiceButton";
-import TriangleSVG from "../assets/bg-triangle.svg";
+import PentagonSVG from "../assets/bg-pentagon.svg";
 import { useState } from "react";
 import { choices } from "../types";
 import type { Choice } from "../types";
@@ -25,9 +25,9 @@ function Game({ setPick, setIsPicking }: GameProps) {
       className={`relative flex items-center justify-center ${animation} my-32`}
     >
       <img
-        src={TriangleSVG}
-        alt="TriangleSVG"
-        className="w-[60vw] max-w-3xs sm:w-auto"
+        src={PentagonSVG}
+        alt="PentagonSVG"
+        className="w-[60vw] sm:w-auto"
       />
       {choices.map((choice) => (
         <ChoiceButton

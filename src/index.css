@@ -6,7 +6,7 @@
   font-family: "Barlow Semi Condensed", sans-serif;
 }
 
-#root {  
+#root {
   background: radial-gradient(circle, hsl(214, 47%, 23%), hsl(237, 48%, 15%));
 }
 
@@ -66,12 +66,11 @@
   box-shadow: 0 8px 0 var(--color-blue-700);
 }
 .paper.preview {
-  top: 0;
-  left: 0;
-  transform: translate(-50%, -50%);
+  right: 0;
+  transform: translate(60%, -20%);
 }
 .paper.preview:active {
-  transform: translate(-50%, calc(-50% + 12px));
+  transform: translate(60%, calc(-20% + 12px));
 }
 
 .scissors {
@@ -80,11 +79,10 @@
 }
 .scissors.preview {
   top: 0;
-  right: 0;
-  transform: translate(50%, -50%);
+  transform: translate(0, -60%);
 }
 .scissors.preview:active {
-  transform: translate(50%, calc(-50% + 12px));
+  transform: translate(0, calc(-60% + 12px));
 }
 
 .rock {
@@ -93,10 +91,34 @@
 }
 .rock.preview {
   bottom: 0;
-  transform: translate(0, 25%);
+  transform: translate(60%, 60%);
 }
 .rock.preview:active {
-  transform: translate(0, calc(25% + 12px));
+  transform: translate(60%, calc(60% + 12px));
+}
+
+.lizard {
+  background-color: var(--color-purple-600);
+  box-shadow: 0 8px 0 var(--color-purple-700);
+}
+.lizard.preview {
+  bottom: 0;
+  transform: translate(-60%, 60%);
+}
+.lizard.preview:active {
+  transform: translate(-60%, calc(60% + 12px));
+}
+
+.spock {
+  background-color: var(--color-light-blue-400);
+  box-shadow: 0 8px 0 var(--color-light-blue-500);
+}
+.spock.preview {
+  left: 0;
+  transform: translate(-60%, -20%);
+}
+.spock.preview:active {
+  transform: translate(-60%, calc(-20% + 12px));
 }
 
 .pop-in {

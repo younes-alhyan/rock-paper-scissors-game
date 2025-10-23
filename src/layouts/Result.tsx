@@ -10,9 +10,11 @@ interface ResultProps {
 }
 
 const RPSMap: Record<Choice, Choice[]> = {
-  rock: ["scissors"],
-  paper: ["rock"],
-  scissors: ["paper"],
+  rock: ["scissors","lizard"],
+  paper: ["rock","spock"],
+  scissors: ["paper","lizard"],
+  lizard:["spock","paper"],
+  spock:["scissors","rock"]
 };
 
 function Result({ setScore, pick, setIsPicking }: ResultProps) {

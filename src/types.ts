@@ -1,4 +1,10 @@
-export const choices = ["rock", "paper", "scissors"] as const;
+export const choices = [
+  "rock",
+  "paper",
+  "scissors",
+  "lizard",
+  "spock",
+] as const;
 export type Choice = (typeof choices)[number];
 
 /* 
@@ -17,14 +23,12 @@ Changes to extend the game (RPS → RPSLS):
 *layouts/Game.tsx*  
 - Update board background import path.  
 - Update <img> rendering the board to use the new background.  
-- Render `ChoiceButton` dynamically from the `choices` array.
 
 *layouts/Header.tsx*  
 - Update the Header image src if necessary.
 
 *layouts/Result.tsx*  
 - Update `RPSMap` to define what each choice beats.  
-- Use the `choices` array for random pick logic.
 
 *index.css*  
 - For every new choice, create three CSS rules: `.choice`, `.choice.preview`, and `.choice.preview:active`.  

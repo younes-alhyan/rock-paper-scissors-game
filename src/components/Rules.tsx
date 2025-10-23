@@ -1,5 +1,5 @@
 import Close from "../assets/icon-close.svg";
-import RulesImage from "../assets/image-rules.svg";
+import RulesImage from "../assets/image-rules-bonus.svg";
 
 interface RulesProps {
   toggleRules: () => void;

@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import PaperIcon from "../assets/icon-paper.svg";
 import RockIcon from "../assets/icon-rock.svg";
 import ScissorsIcon from "../assets/icon-scissors.svg";
+import LizardIcon from "../assets/icon-lizard.svg";
+import SpockIcon from "../assets/icon-spock.svg";
+
 import type { Choice } from "../types";
 
 interface ChoiceButtonProps {
@@ -15,6 +18,8 @@ const iconsMap: Record<Choice, string> = {
   paper: PaperIcon,
   rock: RockIcon,
   scissors: ScissorsIcon,
+  lizard: LizardIcon,
+  spock: SpockIcon,
 };
 
 function ChoiceButton({
